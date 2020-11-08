@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  8 05:23:02 2020
 
-@author: rjsta
-"""
 from plotly.offline import plot
 import pandas as pd
 import plotly.io as pio
