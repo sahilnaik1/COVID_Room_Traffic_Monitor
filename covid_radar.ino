@@ -11,8 +11,10 @@
 */
 
 
+const int BUTTON_PIN = 3; // Digital pin connected to button
 
-#define DHTPIN 2     // Digital pin connected to the DHT sensor 
+const int DHTPIN = 2;     // Digital pin connected to the DHT sensor 
+
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
@@ -37,6 +39,7 @@ void setup() {
   Serial.begin(9600);
   myServo.attach(12); // Defines on which pin is the servo motor attached
   dht.begin();
+  pinMode(BUTTON_PIN, INPUT_PULLUP); // Switch is HIGH when open, LOW when closed
 }
 
 
@@ -64,27 +67,37 @@ void loop() {
     Serial.println();
   }
   
-  
   // rotates the servo motor from 15 to 165 degrees
   for(int i=15;i<=110;i++){  
-  myServo.write(i);
-  delay(30);
-  distance = calculateDistance();// Calls a function for calculating the distance measured by the Ultrasonic sensor for each degree
-  
-  Serial.print(i); // Sends the current degree into the Serial Port
-  Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-  Serial.print(distance); // Sends the distance value into the Serial Port
-  Serial.println();
-  }
-  // Repeats the previous lines from 165 to 15 degrees
-  for(int i=110;i>15;i--){  
-  myServo.write(i);
-  delay(30);
-  distance = calculateDistance();
-  Serial.print(i);
-  Serial.print(",");
-  Serial.print(distance);
-  Serial.println();
+    // Read button state
+    int buttonState = digitalRead(BUTTON_PIN);
+    if (buttonState == 0) { // If button is pressed
+      Serial.print("B");
+    }
+   
+    myServo.write(i);
+    delay(30);
+    distance = calculateDistance();// Calls a function for calculating the distance measured by the Ultrasonic sensor for each degree
+    
+    Serial.print(i); // Sends the current degree into the Serial Port
+    Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print(distance); // Sends the distance value into the Serial Port
+    Serial.println();
+    }
+    // Repeats the previous lines from 165 to 15 degrees
+  for(int i=110;i>15;i--){
+    int buttonState = digitalRead(BUTTON_PIN);
+    if (buttonState == 0) { // If button is pressed
+      Serial.print("B");
+    }
+      
+    myServo.write(i);
+    delay(30);
+    distance = calculateDistance();
+    Serial.print(i);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.println();
   }
 
 }
