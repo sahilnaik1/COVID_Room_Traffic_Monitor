@@ -12,7 +12,8 @@ An ultrasonic sound-based movement detection system that can be deployed in area
 - Servo Motor
 - HC-SR04 Ultrasonic Sensor
 
-### 
+### Schematic
+![Schematic](images/schematic.jpg)
 
 ## Usage
 
