@@ -15,6 +15,8 @@ An ultrasonic sound-based movement detection system that can be deployed in area
 ### Schematic
 ![Schematic](images/schematic.jpg)
 
+To build the circuit, follow [this guide](http://howtomechatronics.com/projects/arduino-radar-project/) that the project was based on.
+
 ## Usage
 
 Load the Arduino code into an Arduino UNO. Immediately after the code is loaded, run the Python script.
