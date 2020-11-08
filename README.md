@@ -14,6 +14,13 @@ An ultrasonic sound-based movement detection system that can be deployed in area
 
 ### Schematic
 ![Schematic](images/schematic.jpg)
+Figure 1: Schematic
+
+![Front View](images/IMG-7254.jpg)
+Figure 2: Front View of Circuit
+
+![Sensor View](images/IMG-7255.jpg)
+Figure 2: Ultrasonic Sensor Attached to Servo
 
 To build the circuit, follow [this guide](http://howtomechatronics.com/projects/arduino-radar-project/) that the project was based on.
 
