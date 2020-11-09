@@ -13,13 +13,14 @@ An ultrasonic sound-based movement detection system that can be deployed in area
 - HC-SR04 Ultrasonic Sensor
 
 ### Schematic
-![Schematic](images/schematic.jpg)
+![Schematic](images/schematic.jpg =200x)
 Figure 1: Schematic
 
 ![Front View](images/IMG-7254.jpg)
 Figure 2: Front View of Circuit
 
-![Sensor View](images/IMG-7255.jpg)
+![Rotating Sensor View](images/rotating.gif)
+
 Figure 3: Ultrasonic Sensor Attached to Servo
 
 To build the circuit, follow [this guide](http://howtomechatronics.com/projects/arduino-radar-project/) that the project was based on.
