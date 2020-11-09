@@ -40,6 +40,7 @@ void setup() {
   myServo.attach(12); // Defines on which pin is the servo motor attached
   dht.begin();
   pinMode(BUTTON_PIN, INPUT_PULLUP); // Switch is HIGH when open, LOW when closed
+  delay(2000);
 }
 
 
