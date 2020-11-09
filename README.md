@@ -30,12 +30,24 @@ To build the circuit, follow [this guide](http://howtomechatronics.com/projects/
 
 Load the Arduino code into an Arduino UNO. Immediately after the code is loaded, run the Python script.
 ```python
-python Industrial_COVID_Regulator.py
+python3 Industrial_COVID_Regulator.py
 ```
 
-If you run into any issues, your best bet is to re-upload the code to the Arduino and run the Python script again. Currently, the code outputs all the degrees of its range scanned for the calibration stage. What then follows is any change detected by the sensor in the format:
+The script will output the following formatted data readings form the sensor:
+```
+####### CALIBRAITON #######
+ANGLE (degrees) : DISTANCE (cm)
+a_1 : d_1
+a_2 : d_2
+...
+####### DETECTION #######
+ANGLE (degrees) : CALIBRATED DISTANCE - DISTANCE (cm)
+a_i : d_i
+a_j : d_j
+...
+```
 
-`degree:measurement:calibration`
+After clicking the button on the breadboard, the Python script halts reading the serial data and prints a dataframe of every occurrence the sensor's motion detection along with the temperature and humidty at those points.
 
 ## Program Structure
 1) Ultrasonic sensor rotates on servo and scans area, measuring the distance to every object around one degree at a time. This first iteration stores the distances as a calibration. Each measurement of distance, temperature, humidity, for each degree is sent to the Python script running on a computer via serial.
