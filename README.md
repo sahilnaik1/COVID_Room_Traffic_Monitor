@@ -13,7 +13,8 @@ An ultrasonic sound-based movement detection system that can be deployed in area
 - HC-SR04 Ultrasonic Sensor
 
 ### Schematic
-![Schematic](images/schematic.jpg =200x)
+
+![Schematic](images/schematic.jpg)
 Figure 1: Schematic
 
 ![Front View](images/IMG-7254.jpg)
